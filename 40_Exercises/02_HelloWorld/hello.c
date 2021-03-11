@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> // include the contents of the standard library header file stdio.h
 
 int main()
 {
