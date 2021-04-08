@@ -5,6 +5,7 @@
 // function declaration
 long factorial(int n);
 long nchoosek(int n, int k);
+void nchoosek_ref(int n, int k, long *result);
 char todo;
 int end = 0, n = 0, k = 0;
 long result = 0;
@@ -29,7 +30,9 @@ int main (int argc, char *argv[])
 	switch(todo)
 	{
 	case('v'): 
-		printf("Der Binominalkoeffizient von %d und %d ist %ld\n", n, k, nchoosek(n,k));
+		printf("Pass by Value:     Der Binominalkoeffizient von %d und %d ist %ld\n", n, k, nchoosek(n,k));
+		nchoosek_ref(n,k,&result);
+		printf("Pass by Reference: Der Binominalkoeffizient von %d und %d ist %ld\n", n, k, result);
 		break;
 		
 	case('l'):
@@ -46,7 +49,7 @@ int main (int argc, char *argv[])
 	return 0;
 }
 
-//function implementation (factorial)
+//function implementation with pass by value (factorial)
 long factorial(int n)
 {
 	result = (n>1) ? (n*factorial(n-1)) : 1;
@@ -59,3 +62,18 @@ long nchoosek(int n, int k)
 	result = factorial(n) / (factorial(k)*(factorial(n-k)));
 	return result;
 }
+
+//function implementation pass by value (nchoosek)
+void nchoosek_ref(int n, int k, long *result)
+{
+	*result = factorial(n) / (factorial(k)*(factorial(n-k)));
+}
+
+
+
+
+
+
+
+
+
