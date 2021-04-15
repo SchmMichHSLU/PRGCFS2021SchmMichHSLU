@@ -25,7 +25,7 @@ int main()
 	[2].firstname = "Bruce", 	[2].lastname = "Banner", 	[2].grades = {5.5, 2.8, 5.3, 4.8, 5.4, 4.5},
 	[3].firstname = "Steve", 	[3].lastname = "Rodgers", 	[3].grades = {4.9, 3.9, 5.8, 2.3, 4.3, 5.4},
 	[4].firstname = "Natasha", 	[4].lastname = "Romanoff", 	[4].grades = {5.3, 5.2, 5.1, 5.7, 4.9, 5.9} };
-	
+
 
 	for( size_t i = 0; i < NUM_STUDENTS; i++)
 	{
@@ -41,7 +41,6 @@ int main()
 		printf("%s %s has an average of: %.2f\n",students[i].firstname, students[i].lastname, students[i].average);
 		
 		average_sum += students[i].average;
-		
 	}
 	
 	classaverage = average_sum / NUM_STUDENTS;
