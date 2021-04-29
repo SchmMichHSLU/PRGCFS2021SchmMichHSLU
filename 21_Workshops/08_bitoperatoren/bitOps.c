@@ -5,25 +5,19 @@
 /* project include */
 #include "bitOps.h"
 
-
-/* globale variable */
-int userInput = 0;
-
-/* local variable */
-
-
-/* private function */
-
-
 /* implementations */
-void ReadUserInput(void) {
-	printf("Enter even number: ")
-	scanf("%d", &userInput)
+void setBitNInByte( unsigned char* data, unsigned char bitN) {
+	*data |= 1 << bitN;
 }
 
+void clearBitNInByte( unsigned char* data, unsigned char bitN) {
+	*data &= ~(1 << bitN);
+}
 
+void toggleBitNInByte( unsigned char* data, unsigned char bitN) {
+	*data ^= 1 << bitN;
+}
 
-void SayGoodBye(void) {
-	printf("Goodbye!!\n");
-	IncrementGreetingsCounter();
+unsigned char BitNIsSet(unsigned char data, unsigned char bitN ) {
+	return (data >> bitN & 1);  
 }
